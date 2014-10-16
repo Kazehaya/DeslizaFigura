@@ -1,0 +1,59 @@
+
+atlas.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Fondo1-01
+  rotate: false
+  xy: 1, 381
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+Logo de la empresa 2
+  rotate: false
+  xy: 1, 177
+  size: 365, 202
+  orig: 365, 202
+  offset: 0, 0
+  index: -1
+Logo de la empresa 1
+  rotate: false
+  xy: 515, 695
+  size: 364, 198
+  orig: 364, 198
+  offset: 0, 0
+  index: -1
+PantallaPrincipalBotonCreditos
+  rotate: false
+  xy: 1, 89
+  size: 304, 86
+  orig: 304, 86
+  offset: 0, 0
+  index: -1
+PantallaPrincipalBotonJugar
+  rotate: false
+  xy: 515, 607
+  size: 304, 86
+  orig: 304, 86
+  offset: 0, 0
+  index: -1
+PantallaPrincipalBotonSalir
+  rotate: false
+  xy: 1, 1
+  size: 304, 86
+  orig: 304, 86
+  offset: 0, 0
+  index: -1
+
+atlas2.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Fondo2-01
+  rotate: false
+  xy: 1, 1
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
