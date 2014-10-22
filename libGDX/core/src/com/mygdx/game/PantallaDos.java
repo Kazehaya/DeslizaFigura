@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
+
 /*MAINSCREEN*/
 public class PantallaDos implements Screen{
 	private boolean isFirstTime;
@@ -24,6 +25,7 @@ public class PantallaDos implements Screen{
 	int state;
 	private int updateElapsed;
 	private int gameState;
+	private Rectangle botonInicioJuego;
 	
 	public PantallaDos (Game game){
 		this.game = game;
@@ -38,12 +40,115 @@ public class PantallaDos implements Screen{
 		touchPoint = new Vector3();
 	}
 	
+//	private void update(float delta){
+////		updateMenu(delta);
+////		if(Gdx.input.isKeyPressed(Keys.BACK) && !isFirstTime){
+////			game.setScreen(new ExitScreen(game));
+////		}
+//	}
+
 	private void update(float delta){
-//		updateMenu(delta);
-//		if(Gdx.input.isKeyPressed(Keys.BACK) && !isFirstTime){
-//			game.setScreen(new ExitScreen(game));
-//		}
+		updateMenu(delta);
+		if(Gdx.input.isKeyPressed(Keys.BACK) && !isFirstTime){
+			//game.setScreen(new ExitScreen(game));
+		}
 	}
+	
+	private void updateMenu(float delta){
+		if(Gdx.input.justTouched()){
+			touchPoint.set(Gdx.input.getX(),Gdx.input.getY(),0);
+			camera.unproject(touchPoint);
+			
+			boolean rectanguloEnBotonInicio = Superposicion.puntoEnRectangulo(botonInicioJuego, touchPoint.x,touchPoint.y);
+			if(rectanguloEnBotonInicio){
+//				//Reproducir sonido
+//				Assets.playSound(Assets.pushButtonSound);
+//				shareButton = new Rectangle();
+//				exitButton = new Rectangle();
+//				shareButton = new Rectangle();
+//				this.state=SELECTION_STATE;//ahora es igual a iniciar??
+//				return;
+			}
+			
+			
+					
+//					if(Superposicion.pointInRectangle(showCreditsButton, touchPoint.x,touchPoint.y)){//Rectangle Creditos
+//						if (this.state != SELECTION_STATE) {
+//							//Reproducir sonido
+//							Assets.playSound(Assets.pushButtonSound);
+//							game.setScreen(new CreditsScreen(game));
+//							return;
+//						}
+//					}
+//					
+//					if(Superposicion.pointInRectangle(exitButton, touchPoint.x,touchPoint.y)){
+//						if (this.state != SELECTION_STATE) {
+//							//Reproducir sonido
+//							Assets.playSound(Assets.pushButtonSound);
+//							//estado = ESTADO_SALIR;
+//							game.setScreen(new ExitScreen(game));
+//							return;
+//						}
+//					}
+//					
+//					if(Superposicion.pointInRectangle(instructionsButton, touchPoint.x,touchPoint.y)){
+//						if (this.state != SELECTION_STATE) {
+//							//Reproducir sonido
+//							Assets.playSound(Assets.pushButtonSound);
+//							//estado = ESTADO_SALIR;
+//							game.setScreen(new InstructionsScreen(game));
+//							return;
+//						}
+//					}
+//					
+//					if(Superposicion.pointInRectangle(shareButton, touchPoint.x,touchPoint.y)){
+//						Assets.playSound(Assets.pushButtonSound);
+//						Gdx.net.openURI(SHARING_FACEBOOK_LINK);
+//						return;
+//					}
+//					
+//				
+//
+//				if(this.state==SELECTION_STATE){
+//					Preferences prefs = Gdx.app.getPreferences("Game");
+//					if(Superposicion.pointInRectangle(gameOneButton, touchPoint.x,touchPoint.y)){
+//						Preferences garagePrefs = Gdx.app.getPreferences("Garage Preferences 1");
+//						prefs.putInteger("Current Game", 0);
+//						garagePrefs.putString("Current Car", "DEFAULT");
+//						garagePrefs.flush();
+//						prefs.flush();
+//						Assets.playSound(Assets.pushButtonSound);
+//						Assets.pump.stop();
+//						game.setScreen(new GameScreen(game));
+//						return;
+//					}
+//					if(Superposicion.pointInRectangle(gameTwoButton, touchPoint.x,touchPoint.y)){
+//						Preferences garagePrefs = Gdx.app.getPreferences("Garage Preferences 2");
+//						prefs.putInteger("Current Game", 1);
+//						garagePrefs.putString("Current Car", "DEFAULT");
+//						garagePrefs.flush();
+//						prefs.flush();
+//						Assets.playSound(Assets.pushButtonSound);
+//						Assets.pump.stop();
+//						game.setScreen(new GameScreen(game));
+//						return;
+//					}
+//					if(Superposicion.pointInRectangle(gameThreeButton, touchPoint.x,touchPoint.y)){
+//						Preferences garagePrefs = Gdx.app.getPreferences("Garage Preferences 3");
+//						prefs.putInteger("Current Game", 2);
+//						garagePrefs.putString("Current Car", "DEFAULT");
+//						garagePrefs.flush();
+//						prefs.flush();
+//						Assets.playSound(Assets.pushButtonSound);
+//						Assets.pump.stop();
+//						game.setScreen(new GameScreen(game));
+//						return;
+//					}
+//					
+//				}
+		}
+	}
+
 	
 	private void draw(float delta){
 		//limpar pantalla
