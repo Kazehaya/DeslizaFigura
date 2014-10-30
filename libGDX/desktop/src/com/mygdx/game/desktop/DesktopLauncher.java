@@ -11,7 +11,7 @@ public class DesktopLauncher {
 		
 		config.addIcon("imagenes/iconos/iconoApp32.png", FileType.Internal);
 //		128x128 Mac
-//		32x32 linux and linux
+//		32x32 linux and windows
 //		16X16 Windows
 		
 		new LwjglApplication(new MyGdxGame(), config);
