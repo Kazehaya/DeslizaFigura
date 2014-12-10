@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package funnyBeginning.deslizapieza.vista;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
@@ -8,42 +8,27 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
-/*LOADING SCREEN*/
-public class PantallaUno implements Screen{
-	
-	private boolean esPrimerIngreso;
-	private static final int PANTALLA_DOS = 2;
-	private static final int TIME_TO_WAIT=100;
-	
-	private  Game game;
-	private OrthographicCamera camera;
-	private int screenWidth;
-	private int screenHeight;
-	
-	private int gameState;
-	int state;
 
-	private Rectangle gameOneButton;
-	
-	
-	
-	
+import funnyBeginning.deslizapieza.modelo.MyGdxGame;
+
+/*LOADINGSCREEN*/
+public class LOADINGSCREEN extends PantallaAbstracta{
+	private static final int PANTALLA_DOS = 2;
+	private int juegoState;
+	int state;
+	private Rectangle juegoOneButton;
 	private SpriteBatch batcher;
 	private Texture loadTexture;
 	private float time;
 	private boolean isLoad;
 	private static final float SLEEP_TIME=2f;
-	private static final String LOAD_FILE="imagenes/pantallasPrincipales/fondos/fondo2.png";//pantalla q carga datos
+	private static final String LOAD_FILE="imagenes/pantallasPrincipales/fondos/FondoCargando.png";//pantalla q carga datos
 	
 	
-	
-	public PantallaUno (MyGdxGame game){// Game game
-		this.game = game;
-		gameState = MyGdxGame.RUN_STATE;
-		screenWidth = Gdx.graphics.getWidth();
-		screenHeight = Gdx.graphics.getHeight();
-		camera = new OrthographicCamera(screenHeight,screenWidth);
-		camera.position.set(screenHeight/2,screenWidth/2,0);
+	public LOADINGSCREEN (MyGdxGame juego){// juego juego
+		super(juego);
+		
+		juegoState = MyGdxGame.RUN_STATE;
 		batcher = new SpriteBatch();
 		loadTexture=new Texture(Gdx.files.internal(LOAD_FILE));
 		time=0;
@@ -59,7 +44,7 @@ public class PantallaUno implements Screen{
 		
 		batcher.begin();
 		//Fondo
-		batcher.draw(this.loadTexture,0,0, screenHeight, screenWidth);
+		batcher.draw(this.loadTexture,0,0, juego.screenHeight, juego.screenWidth);
 		
 		batcher.end();
 		batcher.disableBlending();
@@ -70,12 +55,12 @@ public class PantallaUno implements Screen{
 			isLoad=Assets.loadAssets();
 		}
 		if(time>=SLEEP_TIME && isLoad){
-			game.setScreen(new PantallaDos(game));
+			juego.setScreen(new MAINSCREEN(juego));
 		}
 	}
 	@Override
 	public void render(float delta) { //Listo
-		switch (gameState) {
+		switch (juegoState) {
 		case MyGdxGame.RUN_STATE:
 			this.update(delta);
 			this.draw(delta);

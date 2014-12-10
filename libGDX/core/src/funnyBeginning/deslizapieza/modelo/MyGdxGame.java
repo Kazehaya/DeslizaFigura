@@ -1,4 +1,4 @@
-package com.mygdx.game;
+package funnyBeginning.deslizapieza.modelo;
 /*
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
@@ -47,12 +47,20 @@ Método Resume(): Se llama al volver al juego desde el método Pause().
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 
+import funnyBeginning.deslizapieza.vista.Assets;
+import funnyBeginning.deslizapieza.vista.LOADINGSCREEN;
+
 public class MyGdxGame extends Game{
 	public static final int RUN_STATE = 1;
 	public static final int PAUSE_STATE = 0;
+	public float screenWidth;
+	public float screenHeight;
 	@Override
 	public void create(){
-		setScreen(new PantallaUno(this));
+		screenWidth = Gdx.graphics.getWidth();
+		screenHeight = Gdx.graphics.getHeight();
+		
+		setScreen(new LOADINGSCREEN(this));
 		Gdx.input.setCatchBackKey(true);
 	}
 	

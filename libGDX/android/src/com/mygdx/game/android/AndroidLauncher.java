@@ -4,7 +4,8 @@ import android.os.Bundle;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
-import com.mygdx.game.MyGdxGame;
+
+import funnyBeginning.deslizapieza.modelo.MyGdxGame;
 
 public class AndroidLauncher extends AndroidApplication {
 	@Override

@@ -3,46 +3,74 @@ atlas.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-Fondo1-01
+FondoCargando
   rotate: false
-  xy: 1, 381
+  xy: 1, 503
   size: 512, 512
   orig: 512, 512
   offset: 0, 0
   index: -1
-Logo de la empresa 2
+FondoJuego
   rotate: false
-  xy: 1, 177
-  size: 365, 202
-  orig: 365, 202
+  xy: 1, 1
+  size: 500, 500
+  orig: 500, 500
   offset: 0, 0
   index: -1
-Logo de la empresa 1
+PantallaPequeñaPausa
   rotate: false
-  xy: 515, 695
-  size: 364, 198
-  orig: 364, 198
+  xy: 515, 831
+  size: 364, 184
+  orig: 364, 184
+  offset: 0, 0
+  index: -1
+PantallaPequeñaSalir
+  rotate: false
+  xy: 515, 645
+  size: 364, 184
+  orig: 364, 184
+  offset: 0, 0
+  index: -1
+PantallaPrincipalBotonAtras
+  rotate: false
+  xy: 515, 557
+  size: 304, 86
+  orig: 304, 86
   offset: 0, 0
   index: -1
 PantallaPrincipalBotonCreditos
   rotate: false
-  xy: 1, 89
+  xy: 515, 469
   size: 304, 86
   orig: 304, 86
   offset: 0, 0
   index: -1
 PantallaPrincipalBotonJugar
   rotate: false
-  xy: 515, 607
+  xy: 503, 381
   size: 304, 86
   orig: 304, 86
   offset: 0, 0
   index: -1
 PantallaPrincipalBotonSalir
   rotate: false
-  xy: 1, 1
+  xy: 503, 293
   size: 304, 86
   orig: 304, 86
+  offset: 0, 0
+  index: -1
+EstrellaSalida
+  rotate: false
+  xy: 881, 971
+  size: 45, 44
+  orig: 45, 44
+  offset: 0, 0
+  index: -1
+Estrella
+  rotate: false
+  xy: 821, 603
+  size: 40, 40
+  orig: 40, 40
   offset: 0, 0
   index: -1
 
@@ -50,7 +78,43 @@ atlas2.png
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
-Fondo2-01
+FondoCreditos
+  rotate: false
+  xy: 1, 1
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+
+atlas3.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+FondoMenuPrincipal
+  rotate: false
+  xy: 1, 1
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+
+atlas4.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+PantallasPausa
+  rotate: false
+  xy: 1, 1
+  size: 512, 512
+  orig: 512, 512
+  offset: 0, 0
+  index: -1
+
+atlas5.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+PantallasSalirJuego
   rotate: false
   xy: 1, 1
   size: 512, 512
