@@ -22,7 +22,7 @@ public class LOADINGSCREEN extends PantallaAbstracta{
 	private float time;
 	private boolean isLoad;
 	private static final float SLEEP_TIME=2f;
-	private static final String LOAD_FILE="imagenes/pantallasPrincipales/fondos/FondoCargando.png";//pantalla q carga datos
+	private static final String LOAD_FILE="imagenes/pantallasPrincipales/fondos/Cargando.png";//pantalla q carga datos
 	
 	
 	public LOADINGSCREEN (MyGdxGame juego){// juego juego
