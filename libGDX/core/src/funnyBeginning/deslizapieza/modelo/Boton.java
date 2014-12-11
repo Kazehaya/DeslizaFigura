@@ -41,7 +41,7 @@ public abstract class Boton {
 		
 		xMinima = 0;
 		xMaxima = 152;
-		yMinima =  Gdx.graphics.getWidth() - ;
+		yMinima = 0 ;
 		yMaxima = 86;
 		
 		
