@@ -50,9 +50,9 @@ public class MAINSCREEN extends PantallaAbstracta{
 		float centroY = this.juego.screenWidth / 2 - atlasRegion.getRegionHeight() / 2; // Centro en el eje y de la pantalla centrando el botón
 		
 		//Ubicacion del boton jugar arriba de todo y la region la cual coresponde de nuestro atlas(nos servira despues para dibujar )
-//		jugar = new BotonJugar(centroX, centroY + 50,Assets.atlas.findRegion(Assets.BOTON_JUGAR));
+		jugar = new BotonJugar(centroX, centroY + 50,Assets.atlas.findRegion(Assets.BOTON_JUGAR));
 		creditos = new BotonCreditos(centroX, centroY - 50,Assets.atlas.findRegion(Assets.BOTON_CREDITOS));
-//		salir = new BotonSalir(centroX, centroY - 150,Assets.atlas.findRegion(Assets.BOTON_SALIR));
+		salir = new BotonSalir(centroX, centroY - 150,Assets.atlas.findRegion(Assets.BOTON_SALIR));
 		
 	}
 	
@@ -62,9 +62,9 @@ public class MAINSCREEN extends PantallaAbstracta{
 		Gdx.gl.glClearColor(1, 1, 1, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		
-//		jugar.update(this.juego);
+		jugar.update(this.juego);
 		creditos.update(this.juego);
-//		salir.update(this.juego);
+		salir.update(this.juego);
 		
 		
 		//preparando bracher
@@ -74,16 +74,10 @@ public class MAINSCREEN extends PantallaAbstracta{
 		//comenzando a dibujar
 		batcher.begin();
 		drawMenu(delta);//dibuja mi fondo
-//				//Dibuja botones y demas de esta pantalla
-//					//...Texture region,coordenada1,coordenada2,ALTO,ANCHO
-//				batcher.draw(Assets.atlas.findRegion(Assets.BOTON_JUGAR),screenHeight/2.4f, screenWidth/2.4f, screenHeight * .15f, screenWidth * .12f);
-//				batcher.draw(Assets.atlas.findRegion(Assets.BOTON_CREDITOS),screenHeight/2.4f , screenWidth/3.4f, screenHeight * .15f, screenWidth * .12f);
-//				batcher.draw(Assets.atlas.findRegion(Assets.BOTON_SALIR),screenHeight/2.4f, screenWidth/5.8f, screenHeight*.15f, screenWidth*.12f);
 
-		//paso el pincel con pintura para poder seguir pintando (es el que tiene pintura)
-//		jugar.draw(batcher);
+		jugar.draw(batcher);
 		creditos.draw(batcher);
-//		salir.draw(batcher);
+		salir.draw(batcher);
 		batcher.end();
 		batcher.disableBlending();
 	}

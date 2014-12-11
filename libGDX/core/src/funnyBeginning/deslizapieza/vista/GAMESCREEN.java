@@ -1,8 +1,11 @@
 package funnyBeginning.deslizapieza.vista;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture.TextureFilter;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.math.Vector2;
 
@@ -16,8 +19,8 @@ public class GAMESCREEN extends PantallaAbstracta{
 	
 	private Figura personaje,salida;
 	private int limite;
-	private boolean salidaActiva,llegoMeta;//necesario?
-	private Sound sonidoGanar;
+	private boolean salidaActiva,llegoMeta;
+	//private Sound sonidoGanar;
 	private Music musica;
 	private BitmapFont font;
 	
@@ -25,7 +28,7 @@ public class GAMESCREEN extends PantallaAbstracta{
 	public GAMESCREEN(MyGdxGame juego) {
 		super(juego);
 		font = new BitmapFont(Gdx.files.internal("imagenes/juego/arial.fnt"), Gdx.files.internal("imagenes/juego/arial.png"), false); // Asignamos a font el tipo de letra Arial.
-		sonidoGanar = Gdx.audio.newSound(Gdx.files.internal("sonido/destello.wav"));
+		//sonidoGanar = Gdx.audio.newSound(Gdx.files.internal("sonido/destello.wav"));
 		musica = Gdx.audio.newMusic(Gdx.files.internal("musica/musica_1.wav"));
 	}
 	
@@ -36,10 +39,6 @@ public class GAMESCREEN extends PantallaAbstracta{
 		//coordenadas para el personaje
 		float posicionPersonajeX = 0;
 		float posicionPersonajeY = this.juego.screenWidth - personajeRegion.getRegionWidth(); 
-//		System.out.println(this.juego.screenHeight);
-//		System.out.println(personajeRegion.getRegionHeight());
-//		System.out.println();
-//		System.out.println(posicionPersonajeY);
 		//Ubicacion del personaje
 		Vector2 posicionInicialPersonaje = new Vector2(posicionPersonajeX,posicionPersonajeY);
 		personaje = new Personaje(posicionInicialPersonaje, personajeRegion);
@@ -54,7 +53,7 @@ public class GAMESCREEN extends PantallaAbstracta{
 		salida = new Salida(posicionSalida, salidaRegion);
 		salidaActiva = true;
 		//--------------------------------------------------------------------------------------------------------------------------------
-		musica.setLooping(true); // Se pone para que la música nunca pare.
+		musica.setLooping(true); // Se pone para que la musica nunca pare.
 		musica.play(); // Ponemos la música.
 		llegoMeta = false;
 	}
@@ -65,7 +64,7 @@ public class GAMESCREEN extends PantallaAbstracta{
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT); 
 		
 		if(llegoMeta){ 
-			renderllegoMeta();
+			renderLlegoMeta();
 		}else{
 			renderJuegoNormal();
 		}
@@ -111,7 +110,7 @@ public class GAMESCREEN extends PantallaAbstracta{
 	private void ganar() {
 		llegoMeta = true;
 		musica.stop(); // Paramos la musica.
-		sonidoGanar.play(); // Reproducimos el sonido de victoria
+		//sonidoGanar.play(); // Reproducimos el sonido de victoria
 		System.out.println("Ganaste :D");
 	
 	}

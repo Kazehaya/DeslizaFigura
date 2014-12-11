@@ -12,7 +12,7 @@ public class BotonSalir extends Boton{
 	@Override
 	protected void funcionamiento(MyGdxGame juego) {
 		//Screens.juego.setScreen(Screens.GAMESCREEN); // Se asigna la pantalla de juego
-		System.out.println("Presionaste Boton salir");
+		//System.out.println("Presionaste Boton salir");
 		//juego.setScreen(new EXITSCREEN(juego));
 		Gdx.app.exit();
 	}

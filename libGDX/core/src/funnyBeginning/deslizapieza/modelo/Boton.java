@@ -39,20 +39,20 @@ public abstract class Boton {
 //		this.yMinima = bordes.y;
 //		this.yMaxima = bordes.y + bordes.height;
 		
-		xMinima = 0;
-		xMaxima = 152;
-		yMinima = 0 ;
-		yMaxima = 86;
-		
-		
+//		xMinima = 0;
+//		xMaxima = 152;
+//		yMinima =  0 ;
+//		yMaxima = 86;
+//		
+//		
 		
 		
         
        
-//		this.xMinima = bordes.x + 50;
-//		this.xMaxima = bordes.x + (bordes.width + 110);
-//		this.yMinima = Gdx.graphics.getHeight() - ((bordes.y )+ bordes.height - 75);
-//		this.yMaxima = Gdx.graphics.getHeight() - (bordes.y  - 55);
+		this.xMinima = bordes.x + 50;
+		this.xMaxima = bordes.x + (bordes.width + 110);
+		this.yMinima = Gdx.graphics.getHeight() - ((bordes.y )+ bordes.height - 75);
+		this.yMaxima = Gdx.graphics.getHeight() - (bordes.y  - 55);
 	}
 	public void draw(SpriteBatch batcher) {
 		batcher.draw(this.regionDelBoton,bordes.x, bordes.y, bordes.width, bordes.height);

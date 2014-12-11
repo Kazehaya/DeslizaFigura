@@ -2,6 +2,9 @@ package funnyBeginning.deslizapieza.modelo;
 
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 
+import funnyBeginning.deslizapieza.vista.GAMESCREEN;
+import funnyBeginning.deslizapieza.vista.MAINSCREEN;
+
 
 public class BotonAtras extends Boton {
 
@@ -12,7 +15,8 @@ public class BotonAtras extends Boton {
 
 	@Override
 	protected void funcionamiento(MyGdxGame juego) {
-		System.out.println("Presionaste Boton Atras");
+		//System.out.println("Presionaste Boton Atras");
+		juego.setScreen(new MAINSCREEN(juego));
 
 	}
 
